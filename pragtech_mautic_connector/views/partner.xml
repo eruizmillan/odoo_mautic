@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+     <record model="ir.actions.server" id="export_partner_to_mautic">
+        <field name="name">Customer Export to mautic</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+       <field name="binding_model_id" ref="base.model_res_partner"/>
+        <field name="state">code</field>
+        <field name="code">if records:
+                			action = records.export_customer()
+        </field>
+         
+    </record>
+    <record model="ir.actions.server" id="export_partner_to_mautic_company">
+        <field name="name">Company Export to mautic</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+       <field name="binding_model_id" ref="base.model_res_partner"/>
+        <field name="state">code</field>
+        <field name="code">if records:
+                			action = records.export_company()
+        </field>
+         
+    </record>
+    
+    <record model="ir.actions.server" id="export_product_to_mautic_product">
+        <field name="name"> Product Export to mautic</field>
+        <field name="model_id" ref="product.model_product_template"/>
+       <field name="binding_model_id" ref="product.model_product_template"/>
+        <field name="state">code</field>
+        <field name="code">if records:
+                			action = records.export_product()
+        </field>
+         
+    </record>
+    
+    
+</odoo>
